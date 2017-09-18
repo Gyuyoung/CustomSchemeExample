@@ -1,0 +1,19 @@
+<head>
+    <script type="text/javascript">
+        function RegisterHandler () {
+            navigator.registerProtocolHandler ("newmailto", "http://help.dottoro.com/protocolHandler.php?uri=%s", "Dottoro mailto protocol handler");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="RegisterHandler ();">Register a handler for the mailto protocol!</button>
+
+    <p>
+    This is an email link:
+    <a href="newmailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
+    </p>
+
+    <p>
+    <b>Note:</b> Spaces between words should be replaced by %20 to ensure that the browser will display the text properly.
+    </p>
+</body>
