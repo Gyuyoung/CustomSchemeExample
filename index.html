@@ -1,10 +1,10 @@
 
 <html>
 <head>
+    <script type="text/javascript">
+        navigator.registerProtocolHandler("web+burger", "https://blogs.igalia.com/%s", "Burger handler");
+    </script>
 </head>
 <body>
-<script>
-navigator.registerProtocolHandler("web+burger", "https://blogs.igalia.com/%s", "Burger handler");
-</script>
-<a href="web+burger://gyuyoung">Test web+burger custom scheme</a>
+    <a href="web+burger:gyuyoung">Test web+burger custom scheme</a>
 </body>
