@@ -8,15 +8,14 @@
 	else
 	    console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
 
-    window.navigator.registerProtocolHandler("web+igalia",
+    window.navigator.registerProtocolHandler("web+github",
                                              "https://gyuyoung.github.io/CustomSchemeExample/%s",
-                                             "Igalia blog handler");
+                                             "github handler");
   </script>
 </head>
 <body>
   <h1>Web Protocol Handler Sample</h1>
-  <p>This web page will install a web protocol handler for the <code>web+igalia:</code> protocol.</p>
-  <p>Go to call.html <a href="./call.html">Go</a></p>
-  <p>Hey have you seen <a href="web+igalia:gyuyoung">this</a> before?</p>
+  <p>This web page will install a web protocol handler for the <code>web+github:</code> protocol.</p>
+  <p>Hey have you seen <a href="web+github:gyuyoung">this</a> before?</p>
 </body>
 </html>
