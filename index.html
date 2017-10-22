@@ -1,10 +1,21 @@
-
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
 <head>
+    <title>Web Protocol Handler Sample - Register</title>
     <script type="text/javascript">
-        navigator.registerProtocolHandler("web+burger", "https://blogs.igalia.com/%s", "Burger handler");
-    </script>
+        if (window.navigator.registerProtocolHandler)
+            console.log('PASS window.navigator.registerProtocolHandler is defined.');
+	else
+	    console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
+
+    window.navigator.registerProtocolHandler("web+igalia",
+                                             "https://blogs.igalia.com/",
+                                             "Igalia blog handler");
+  </script>
 </head>
 <body>
-    <a href="web+burger:gyuyoung">Test web+burger custom scheme</a>
+  <h1>Web Protocol Handler Sample</h1>
+  <p>This web page will install a web protocol handler for the <code>web+igalia:</code> protocol.</p>
+  <p>Go to call.html <a href="./call.html">Go</a></p>
 </body>
+</html>
