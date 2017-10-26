@@ -3,19 +3,30 @@
 <head>
     <title>Web Protocol Handler Sample - Register</title>
     <script type="text/javascript">
-        if (window.navigator.registerProtocolHandler)
+        if (window.navigator.registerProtocolHandler) {
             console.log('PASS window.navigator.registerProtocolHandler is defined.');
-	else
-	    console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
+        } else {
+            console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
+        }
 
-    window.navigator.registerProtocolHandler("web+github",
-                                             "https://gyuyoung.github.io/CustomSchemeExample/%s",
-                                             "github handler");
-  </script>
+        window.navigator.registerProtocolHandler("web+github",
+                                                 "https://gyuyoung.github.io/CustomSchemeExample/%s",
+                                                 "github handler");
+    </script>
 </head>
 <body>
-  <h1>Web Protocol Handler Sample</h1>
-  <p>This web page will install a web protocol handler for the <code>web+github:</code> protocol.</p>
-  <p>Hey have you seen <a href="web+github:gyuyoung">this</a> before?</p>
+    <h1>Web Protocol Handler Sample</h1>
+    <p>This web page is a demo to show how does navigator.registerProtocolHandler works.
+       This page installed <b>web+github custom protocol</b> through registerProtocolHandler with a below code.</p>
+    <div>
+    <table>
+    <code><b>
+        window.navigator.registerProtocolHandler("web+github",
+                                                 "https://gyuyoung.github.io/CustomSchemeExample/%s",
+                                                 "github handler");
+    </b></code>
+    </table>
+    </div>
+<p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
 </body>
 </html>
