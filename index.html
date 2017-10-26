@@ -9,7 +9,7 @@
             console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
         }
 
-        window.navigator.registerProtocolHandler("webcal",
+        window.navigator.registerProtocolHandler("web+github",
                                                  "https://gyuyoung.github.io/CustomSchemeExample/%s",
                                                  "github handler");
     </script>
@@ -24,12 +24,12 @@
     <div>
     <table>
     <code><b>
-        window.navigator.registerProtocolHandler("webcal",
+        window.navigator.registerProtocolHandler("web+github",
                                                  "https://gyuyoung.github.io/CustomSchemeExample/%s",
                                                  "github handler");
     </b></code>
     </table>
     </div>
-<p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="webcal:gyuyoung">this</a> </p>
+<p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
 </body>
 </html>
