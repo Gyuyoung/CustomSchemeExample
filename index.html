@@ -33,8 +33,13 @@
 <p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
 <p> web+github protol is </p>
 <script>
-     var result = window.navigator.IsProtocolHandlerRegistered("web+github",
-                                                  "https://gyuyoung.github.io/CustomSchemeExample/%s");
+    if (window.navigator.IsProtocolHandlerRegistered) {
+        console.log('PASS window.navigator.IsProtocolHandlerRegistered is defined.');
+    } else {
+        console.log('FAIL window.navigator.IsProtocolHandlerRegistered is not defined.');
+    }
+    var result = window.navigator.IsProtocolHandlerRegistered("web+github",
+                                                              "https://gyuyoung.github.io/CustomSchemeExample/%s");
      document.write("result = " + result);
 </script>
 </body>
