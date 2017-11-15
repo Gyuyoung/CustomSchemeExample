@@ -2,17 +2,6 @@
 <html lang="en">
 <head>
     <title>Web Protocol Handler Sample - Register</title>
-    <script type="text/javascript">
-        if (window.navigator.registerProtocolHandler) {
-            console.log('PASS window.navigator.registerProtocolHandler is defined.');
-        } else {
-            console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
-        }
-
-        window.navigator.registerProtocolHandler("web+github",
-                                                 "https://gyuyoung.github.io/CustomSchemeExample/%s",
-                                                 "github handler");
-    </script>
 </head>
 <body>
     <h1>Web Protocol Handler Sample</h1>
@@ -30,6 +19,17 @@
     </b></code>
     </table>
     </div>
+<script type="text/javascript">
+    if (window.navigator.registerProtocolHandler) {
+        console.log('PASS window.navigator.registerProtocolHandler is defined.');
+    } else {
+        console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
+    }
+
+    window.navigator.registerProtocolHandler("web+github",
+                                             "https://gyuyoung.github.io/CustomSchemeExample/%s",
+                                             "github handler");
+</script>
 <p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
 <p> web+github protol is </p>
 <script>
