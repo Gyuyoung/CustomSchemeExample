@@ -19,8 +19,7 @@
     <p>This web page is a demo to show how does navigator.registerProtocolHandler work.
        This page installed <b>web+github custom protocol</b> through registerProtocolHandler with a below code.
     </p>
-    <p> The W3C spec is <a href="https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-registerprotocolhandler">https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-registerprotocolhandler</a></p>
-
+    <p> The HTML 5.2 specification is <a href="https://www.w3.org/TR/html52/webappapis.html#dom-navigatorcontentutils-isprotocolhandlerregistered">https://www.w3.org/TR/html52/webappapis.html#dom-navigatorcontentutils-isprotocolhandlerregistered</a></p>
     <div>
     <table>
     <code><b>
@@ -30,17 +29,33 @@
     </b></code>
     </table>
     </div>
-<p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
-<p> web+github protol is </p>
-<script>
-    if (window.navigator.isProtocolHandlerRegistered) {
-        console.log('PASS window.navigator.isProtocolHandlerRegistered is defined.');
-    } else {
-        console.log('FAIL window.navigator.isProtocolHandlerRegistered is not defined.');
-    }
-    var result = window.navigator.isProtocolHandlerRegistered("web+github",
+    <p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
+    <p> [After registerProtocolHandler] web+github protol is </p>
+    <script>
+        if (window.navigator.isProtocolHandlerRegistered) {
+            console.log('PASS window.navigator.isProtocolHandlerRegistered is defined.');
+        } else {
+            console.log('FAIL window.navigator.isProtocolHandlerRegistered is not defined.');
+        }
+        var result = window.navigator.isProtocolHandlerRegistered("web+github",
+                                                                  "https://gyuyoung.github.io/CustomSchemeExample/%s");
+        document.write("* result = " + result);
+    </script>
+ 
+    <!-- Check if isProtocolHandlerRegistered works well after calling unregisterProtocolHandler  -->
+    <p>Now is time to test unregisterProtocolHandler for <code><b>web+github:</b></code></p>
+    <code><b>
+        window.navigator.unregisterProtocolHandler("web+github",
+                                                   "https://gyuyoung.github.io/CustomSchemeExample/%s");
+    </b></code>
+    <p> [After unregisterProtocolHandler] web+github protol is </p>
+    <script>
+        // Test unregisterProtocolHandler.
+        window.navigator.unregisterProtocolHandler("web+github",
+                                                   "https://gyuyoung.github.io/CustomSchemeExample/%s");
+        result = window.navigator.isProtocolHandlerRegistered("web+github",
                                                               "https://gyuyoung.github.io/CustomSchemeExample/%s");
-    document.write("result = " + result);
-</script>
+        document.write("* result after unregisterProtocolHandler = " + result);
+    </script>
 </body>
 </html>
