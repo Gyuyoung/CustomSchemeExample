@@ -41,5 +41,21 @@
                                                                   "https://gyuyoung.github.io/CustomSchemeExample/%s");
         document.write("* result after registerProtocolHandler = " + result);
     </script>
+ 
+    <!-- Check if isProtocolHandlerRegistered works well after calling unregisterProtocolHandler  -->
+    <p>Now is time to test unregisterProtocolHandler for <code><b>web+github:</b></code></p>
+    <code><b>
+        window.navigator.unregisterProtocolHandler("web+github",
+                                                   "https://gyuyoung.github.io/CustomSchemeExample/%s");
+    </b></code>
+    <p> [After unregisterProtocolHandler] web+github protol is </p>
+    <script>
+        // Test unregisterProtocolHandler.
+        window.navigator.unregisterProtocolHandler("web+github",
+                                                   "https://gyuyoung.github.io/CustomSchemeExample/%s");
+        var result2 = window.navigator.isProtocolHandlerRegistered("web+github",
+                                                              "https://gyuyoung.github.io/CustomSchemeExample/%s");
+        document.write("* result after unregisterProtocolHandler = " + result2);
+    </script>
 </body>
 </html>
