@@ -53,9 +53,9 @@
         // Test unregisterProtocolHandler.
         window.navigator.unregisterProtocolHandler("web+github",
                                                    "https://gyuyoung.github.io/CustomSchemeExample/%s");
-        result = window.navigator.isProtocolHandlerRegistered("web+github",
+        var result2 = window.navigator.isProtocolHandlerRegistered("web+github",
                                                               "https://gyuyoung.github.io/CustomSchemeExample/%s");
-        document.write("* result after unregisterProtocolHandler = " + result);
+        document.write("* result after unregisterProtocolHandler = " + result2);
     </script>
 </body>
 </html>
