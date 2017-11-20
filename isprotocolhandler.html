@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+  <title>Web Protocol Handler Sample - Register</title>
+    <script type="text/javascript">
+        var url = "http://starkravingfinkle.org/projects/wph/handler.php?value=%s";
+	    if (!navigator.isProtocolHandlerRegistered("fake", url)) {
+                navigator.registerProtocolHandler("fake", url, "Fake Protocol");
+			      }
+    </script>
+</head>
+<body>
+  <h1>Web Protocol Handler Sample</h1>
+  <p>This web page will install a web protocol handler for the <code>fake:</code> protocol.</p>
+</body>
+</html>
