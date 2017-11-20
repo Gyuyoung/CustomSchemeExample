@@ -4,8 +4,8 @@
   <title>Web Protocol Handler Sample - Register</title>
     <script type="text/javascript">
         var url = "https://gyuyoung.github.io/CustomSchemeExample/%s";
-	    if (!navigator.isProtocolHandlerRegistered("fake", url)) {
-                navigator.registerProtocolHandler("fake", url, "Fake Protocol");
+	    if (!navigator.isProtocolHandlerRegistered("web+fake", url)) {
+                navigator.registerProtocolHandler("web+fake", url, "Fake Protocol");
             }
     </script>
 </head>
