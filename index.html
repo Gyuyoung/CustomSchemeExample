@@ -9,9 +9,10 @@
             console.log('FAIL window.navigator.registerProtocolHandler is not defined.');
         }
 
-        window.navigator.registerProtocolHandler("web+github",
-                                                 "https://gyuyoung.github.io/CustomSchemeExample/url=%s",
-                                                 "github handler");
+        //window.navigator.registerProtocolHandler("web+github",
+        //                                         "https://gyuyoung.github.io/CustomSchemeExample/url=%s",
+        //                                         "github handler");
+        navigator.registerProtocolHandler('mailto', 'http://%s.com', 'foo');
     </script>
 </head>
 <body>
