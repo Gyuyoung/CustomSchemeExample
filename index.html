@@ -10,9 +10,8 @@
         }
 
         window.navigator.registerProtocolHandler("web+github",
-                                                 "https://gyuyoung.github.io/CustomSchemeExample/%s=url",
+                                                 "https://gyuyoung.github.io/CustomSchemeExample/%s/%s=url",
                                                  "github handler");
-        navigator.registerProtocolHandler('mailto', 'http://%s.com', 'foo');
     </script>
 </head>
 <body>
@@ -32,7 +31,7 @@
     </div>
     <p>If you click this link, it runs <code><b>web+github:</b></code> protocol: <a href="web+github:gyuyoung">this</a> </p>
     <p> [After registerProtocolHandler] web+github protol is </p>
-    <script>
+<!--    <script>
         if (window.navigator.isProtocolHandlerRegistered) {
             console.log('PASS window.navigator.isProtocolHandlerRegistered is defined.');
         } else {
@@ -42,13 +41,14 @@
                                                                   "https://gyuyoung.github.io/CustomSchemeExample/url=%s");
         document.write("* result after registerProtocolHandler = " + result);
     </script>
- 
+-->
     <!-- Check if isProtocolHandlerRegistered works well after calling unregisterProtocolHandler  -->
     <p>Now is time to test unregisterProtocolHandler for <code><b>web+github:</b></code></p>
     <code><b>
         window.navigator.unregisterProtocolHandler("web+github",
                                                    "https://gyuyoung.github.io/CustomSchemeExample/%s", "title");
     </b></code>
+<!--
     <p> [After unregisterProtocolHandler] web+github protol is </p>
     <script>
         // Test unregisterProtocolHandler.
@@ -58,5 +58,6 @@
                                                               "https://gyuyoung.github.io/CustomSchemeExample/url=%s");
         document.write("* result after unregisterProtocolHandler = " + result2);
     </script>
+-->
 </body>
 </html>
